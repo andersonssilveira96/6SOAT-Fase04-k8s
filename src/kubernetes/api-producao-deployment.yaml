@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: api-producao-deployment
   labels:
-    app: api
+    app: api-producao
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api
+      app: api-producao
   template:
     metadata:
       name: pod-api
       labels:
-        app: api
+        app: api-producao
     spec:
       containers:
-        - name: api-container
-          image: andssil/techchallenge:latest
+        - name: api-producao-container
+          image: andssil/techchallenge-producao:latest
           ports:
             - containerPort: 8080
           env:  
@@ -26,7 +26,7 @@ spec:
             - name: ConnectionStrings__Database
               valueFrom: 
                secretKeyRef:
-                name: api-secret
+                name: api-producao-secret
                 key: connectionString
           imagePullPolicy: IfNotPresent               
           resources:

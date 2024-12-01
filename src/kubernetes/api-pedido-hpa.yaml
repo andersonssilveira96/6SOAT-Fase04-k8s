@@ -1,18 +1,18 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: api-hpa
+  name: api-pedido-hpa
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: api-deployment
+    name: api-pedido-deployment
   minReplicas: 1
   maxReplicas: 10
   metrics:
     - type: ContainerResource
       containerResource:
-        container: api-container
+        container: api-pedido-container
         name: cpu
         target:
           averageUtilization: 70
