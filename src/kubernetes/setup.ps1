@@ -17,7 +17,7 @@ kubectl apply -f ./src/kubernetes/api-producao-deployment.yaml
 kubectl apply -f ./src/kubernetes/api-producao-svc.yaml
 kubectl apply -f ./src/kubernetes/api-producao-hpa.yaml
 
-# API Producao
+# API Pagamento
 kubectl apply -f ./src/kubernetes/api-pagamento-secret.yaml
 kubectl apply -f ./src/kubernetes/api-pagamento-deployment.yaml
 kubectl apply -f ./src/kubernetes/api-pagamento-svc.yaml
